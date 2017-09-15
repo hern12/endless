@@ -32,7 +32,6 @@ class PopularMenu extends Component{
 				like:"41"
 			},			
 		];
-		console.log(MenuItem);
 		var MenuItemList = MenuItem.map(function(object,index){
 			return <PopularMenuItem key={index} itemImgUrl={object.imgUrl} MenuName={object.menuTitle} Like={object.like}/>
 		})

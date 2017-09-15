@@ -12,9 +12,12 @@
 
 .MenuBox{
   padding: 20px;
+  padding-bottom:20px;
+  margin-bottom: 50px;
 }
 
-.MenuBox h2{
+.MenuBox h2,.galleryBox h2{
+  margin-bottom: 20px;
   font-size: 30px;
   text-align: center;
   font-weight: bold;
