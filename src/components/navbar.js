@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
+import logo from '../images/logo.png';
+
 class Navbar extends Component {
 	render() {
 	  return (
 		<div className="header">
-			<nav className="navbar is-warning" role="navigation" aria-label="main navigation">
+			<nav className="navbar is-" role="navigation" aria-label="main navigation">
 				<div className="navbar-brand">
 					<a className="navbar-item" href="http://bulma.io">
-						<img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"/>
+						<img src={logo}  width="112" height="28"/>
 					</a>
 					<a className="navbar-item " href="http://bulma.io/expo/">
 						<span className="bd-emoji"><i className="fa fa-home"></i> </span>
 						Home
+					</a>
+					<a className="navbar-item " href="">
+						<span className="bd-emoji"><i className="fa fa-book"></i> </span>
+						Menu
+					</a>
+					<a className="navbar-item " href="">
+						<span className="bd-emoji"><i className="fa fa-picture-o"></i> </span>
+						Gallery
+					</a>
+					<a className="navbar-item " href="">
+						<span className="bd-emoji"><i className="fa fa-users"></i> </span>
+						About
+					</a>
+					<a className="navbar-item " href="">
+						<span className="bd-emoji"><i className="fa fa-phone"></i> </span>
+						Contact
 					</a>
 					<button className="button navbar-burger">
 						<span></span>
@@ -22,6 +40,6 @@ class Navbar extends Component {
 		</div>
 	  );
 	}
-  }
+}
   
-  export default Navbar;
+export default Navbar;
