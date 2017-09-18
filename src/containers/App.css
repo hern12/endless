@@ -54,3 +54,39 @@
 .likeBtn i{
   color:white;
 }
+
+.imgItem{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 5px #888888;
+  transition: all 200ms ease-in;
+  transform: scale(1); 
+  cursor: pointer;
+  position: relative; 
+}
+
+.imgItem:hover{
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+  box-shadow: 1px 1px 30px #34495e;
+}
+
+.galBox{
+  position: relative;
+}
+
+video#vid {
+  position: absolute; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background-size: cover;
+  margin: 0 auto;
+}

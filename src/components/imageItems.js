@@ -38,10 +38,13 @@ class ImageItems extends Component{
     
         render(){
             return(
-                <div className='column is-4' onClick={this.handleClick}>
-                    <img src={this.props.itemImgUrl} />
+                <div className='column is-3' onClick={this.handleClick}>
+                    <img src={this.props.itemImgUrl} className='imgItem'/>
                     <Lightbox
-                        images={[{ src: process.env.PUBLIC_URL +'/images/gallery/1.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/2.jpg' }]}
+                        images={[{ src: process.env.PUBLIC_URL +'/images/gallery/1.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/2.jpg' }
+                        ,{ src: process.env.PUBLIC_URL +'/images/gallery/3.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/4.jpg' },
+                        { src: process.env.PUBLIC_URL +'/images/gallery/5.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/6.jpg' },
+                        { src: process.env.PUBLIC_URL +'/images/gallery/7.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/8.jpg' }]}
                         isOpen={this.state.lightboxIsOpen}
                         onClickPrev={this.gotoPrevious}
                         onClickNext={this.gotoNext}
