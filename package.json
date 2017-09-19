@@ -6,6 +6,7 @@
     "axios": "^0.16.2",
     "bulma": "^0.5.2",
     "express": "^4.15.4",
+    "fetch-instagram": "^1.0.0-alpha.3",
     "font-awesome": "^4.7.0",
     "morgan": "^1.8.2",
     "react": "^15.6.1",

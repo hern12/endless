@@ -10,13 +10,11 @@ class Gallery extends Component{
 	}
 
 	componentDidMount() {
-		axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=307416303.a8158f6.5b7d01cd928d49b49cfce4a9b044cc8c&callback=http://localhost:3000',
-			{headers: {"Accept": "application/json",
-						"Access-Control-Allow-Origin": "*"}
-			})
-		  .then(res => {
-			console.log(res);
-		  });
+		return fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=307416303.a8158f6.5b7d01cd928d49b49cfce4a9b044cc8c")
+		.then((response) => console.log(response.json()))
+		.catch((error) => {
+			console.error(error);
+		});
 	}
 
 	render(){
