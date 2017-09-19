@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import ImageItems from './imageItems.js'
 
 
@@ -7,6 +7,16 @@ class Gallery extends Component{
 
 	myCallback = (dataFromChild) => {
 		console.log(dataFromChild);
+	}
+
+	componentDidMount() {
+		axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=307416303.a8158f6.5b7d01cd928d49b49cfce4a9b044cc8c&callback=http://localhost:3000',
+			{headers: {"Accept": "application/json",
+						"Access-Control-Allow-Origin": "*"}
+			})
+		  .then(res => {
+			console.log(res);
+		  });
 	}
 
 	render(){
