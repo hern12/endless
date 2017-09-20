@@ -13,7 +13,7 @@ class Gallery extends Component{
             }
     }
 	componentDidMount() {
-		axios.get('http://localhost:4000')
+		axios.get('https://endless-web.herokuapp.com/')
 		  .then(res => {
 			var newMap = []
 			var imageUrl = res.data.data.map(function(d,i){
