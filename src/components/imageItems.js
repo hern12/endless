@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
+const LIGHTBOX_IMAGE_SET = []
 class ImageItems extends Component{
     constructor() {
         super();
             this.state = {
                   lightboxIsOpen: false,
-                  curImg:0
+                  curImg:0,
+                  itemLight:[]
             }
             this.gotoPrevious = this.gotoPrevious.bind(this);
             this.gotoNext = this.gotoNext.bind(this);
             this.closeLightbox = this.closeLightbox.bind(this);
             this.handleClick = this.handleClick.bind(this);
-        }
+    }
         gotoPrevious() {
             this.setState(prevState => ({
                 curImg: prevState.curImg - 1
@@ -29,22 +31,23 @@ class ImageItems extends Component{
         }
     
         handleClick() {
-            console.log(this.props.imgCurrent)
             this.setState(prevState => ({
                 lightboxIsOpen: !prevState.lightboxIsOpen,
                 curImg: this.props.imgCurrent
             }));
         }
-    
+        
+
+        componentDidMount() {
+            LIGHTBOX_IMAGE_SET.push({src:this.props.itemImgUrl});
+        }
+
         render(){
             return(
                 <div className='column is-3' onClick={this.handleClick}>
                     <img src={this.props.itemImgUrl} className='imgItem'/>
                     <Lightbox
-                        images={[{ src: process.env.PUBLIC_URL +'/images/gallery/1.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/2.jpg' }
-                        ,{ src: process.env.PUBLIC_URL +'/images/gallery/3.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/4.jpg' },
-                        { src: process.env.PUBLIC_URL +'/images/gallery/5.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/6.jpg' },
-                        { src: process.env.PUBLIC_URL +'/images/gallery/7.jpg' },{ src: process.env.PUBLIC_URL +'/images/gallery/8.jpg' }]}
+                        images={LIGHTBOX_IMAGE_SET}
                         isOpen={this.state.lightboxIsOpen}
                         onClickPrev={this.gotoPrevious}
                         onClickNext={this.gotoNext}
