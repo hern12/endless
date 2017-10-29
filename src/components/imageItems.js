@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Lightbox from 'react-images';
-const LIGHTBOX_IMAGE_SET = []
+
+let LIGHTBOX_IMAGE_SET = []
+axios.get('http://localhost:8080/')
+.then(res => {
+  var newMap = []
+  res.data.data.map(function(d,i){
+      newMap.push({'src' : d.images.standard_resolution.url });
+  })
+  LIGHTBOX_IMAGE_SET = newMap;
+});
+
 class ImageItems extends Component{
     constructor() {
         super();
@@ -39,7 +50,7 @@ class ImageItems extends Component{
         
 
         componentDidMount() {
-            LIGHTBOX_IMAGE_SET.push({src:this.props.itemImgUrl});
+            //LIGHTBOX_IMAGE_SET.push({src:this.props.itemImgUrl});
         }
 
         render(){
