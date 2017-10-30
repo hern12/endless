@@ -4,7 +4,7 @@ import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Home from './Home';
 import Menu from './Menu';
-
+import Navbar from '../components/navbar.js';
 import {
 	BrowserRouter as Router,
 	Route,
@@ -16,8 +16,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-         <Route exact path="/" component={Home}/>
-         <Route path="/Menu" component={Menu}/>
+         <Navbar/>
+         <Route exact path='/' component={Home}/>
+         <Route path='/Menu' component={Menu}/>
         </div>
       </Router>
     );
