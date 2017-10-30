@@ -10,7 +10,6 @@ import {
 class Navbar extends Component {
 	render() {
 	  return (
-		<Router>
 			<div className="header">
 				<nav className="navbar is-" role="navigation" aria-label="main navigation">
 					<div className="navbar-brand">
@@ -45,7 +44,6 @@ class Navbar extends Component {
 					</div>
 				</nav>
 			</div>
-		</Router>
 	  );
 	}
 }
